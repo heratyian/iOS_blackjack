@@ -15,6 +15,9 @@
 		CD659B511B7AB18000F1C1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD659B4F1B7AB18000F1C1DD /* LaunchScreen.storyboard */; };
 		CD659B5C1B7AB18000F1C1DD /* blackjackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B5B1B7AB18000F1C1DD /* blackjackTests.m */; };
 		CD659B671B7AB18000F1C1DD /* blackjackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B661B7AB18000F1C1DD /* blackjackUITests.m */; };
+		CD659B791B7AE78600F1C1DD /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B781B7AE78600F1C1DD /* Deck.m */; };
+		CD659B7C1B7AE7A600F1C1DD /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B7B1B7AE7A600F1C1DD /* Card.m */; };
+		CDE181911B7D185300707412 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE181901B7D185300707412 /* Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		CD659B621B7AB18000F1C1DD /* blackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD659B661B7AB18000F1C1DD /* blackjackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blackjackUITests.m; sourceTree = "<group>"; };
 		CD659B681B7AB18000F1C1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD659B771B7AE78600F1C1DD /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		CD659B781B7AE78600F1C1DD /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		CD659B7A1B7AE7A600F1C1DD /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		CD659B7B1B7AE7A600F1C1DD /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		CDE1818F1B7D185300707412 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		CDE181901B7D185300707412 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,12 @@
 				CD659B471B7AB18000F1C1DD /* ViewController.h */,
 				CD659B481B7AB18000F1C1DD /* ViewController.m */,
 				CD659B4A1B7AB18000F1C1DD /* Main.storyboard */,
+				CD659B7A1B7AE7A600F1C1DD /* Card.h */,
+				CD659B7B1B7AE7A600F1C1DD /* Card.m */,
+				CD659B771B7AE78600F1C1DD /* Deck.h */,
+				CD659B781B7AE78600F1C1DD /* Deck.m */,
+				CDE1818F1B7D185300707412 /* Util.h */,
+				CDE181901B7D185300707412 /* Util.m */,
 				CD659B4D1B7AB18000F1C1DD /* Assets.xcassets */,
 				CD659B4F1B7AB18000F1C1DD /* LaunchScreen.storyboard */,
 				CD659B521B7AB18000F1C1DD /* Info.plist */,
@@ -270,9 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD659B7C1B7AE7A600F1C1DD /* Card.m in Sources */,
+				CD659B791B7AE78600F1C1DD /* Deck.m in Sources */,
 				CD659B491B7AB18000F1C1DD /* ViewController.m in Sources */,
 				CD659B461B7AB18000F1C1DD /* AppDelegate.m in Sources */,
 				CD659B431B7AB18000F1C1DD /* main.m in Sources */,
+				CDE181911B7D185300707412 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +514,7 @@
 				CD659B6D1B7AB18000F1C1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD659B6E1B7AB18000F1C1DD /* Build configuration list for PBXNativeTarget "blackjackTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +523,7 @@
 				CD659B701B7AB18000F1C1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD659B711B7AB18000F1C1DD /* Build configuration list for PBXNativeTarget "blackjackUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +532,7 @@
 				CD659B731B7AB18000F1C1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
