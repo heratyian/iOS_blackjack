@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Deck.h"
 #import "Card.h"
+#import "Hand.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *hitMeButton;
@@ -16,8 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UILabel *playerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dealerLabel;
-@property (nonatomic) NSMutableArray *dealerHand;
-@property (nonatomic) NSMutableArray *playerHand;
+@property (nonatomic) Hand *dealerHand;
+@property (nonatomic) Hand *playerHand;
 @property (nonatomic) Deck *deck;
 @end
 
@@ -26,14 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.deck = [Deck createDeck];
-    
 //    for (int i=0; i < [self.deck.cards count]; i++) {
 //        Card *card = self.deck.cards[i];
 //        NSLog(@"%@ %d %@", card.suit, card.value, card.face);
 //    }
-    
-    
     [self resetVariables];
     
     [self.hitMeButton addTarget:self action:@selector(hitMePressed: ) forControlEvents:UIControlEventTouchUpInside];
@@ -43,12 +40,15 @@
 }
 
 - (void)hitMePressed:(UIButton *)button {
-    self.playerHand addObject:[deck.nextCard];
-    self.playerLabel.text = [NSString stringWithFormat:@"%d", self.playerHand];
+    [self.playerHand addCard:self.deck.nextCard];
+    [self updateLabels];
 }
 
 - (void)stayPressed:(UIButton *)button {
-    
+    while ([self.dealerHand handValueAsInt] < 17) {
+        [self.dealerHand addCard:self.deck.nextCard];
+        [self updateLabels];
+    }
 }
 
 - (void)restartPressed:(UIButton *)button {
@@ -56,11 +56,16 @@
 }
 
 - (void)resetVariables {
-    self.dealerHand = [[NSMutableArray alloc] init];
-    self.playerHand = [[NSMutableArray alloc] init];
-    
-    self.playerLabel.text = [NSString stringWithFormat:@"%d", self.playerHand];
-    self.dealerLabel.text = [NSString stringWithFormat:@"%d", self.dealerHand];
+    self.deck = [Deck createDeck];
+    self.dealerHand = [Hand createHand];
+    self.playerHand = [Hand createHand];
+
+    [self updateLabels];
+}
+
+- (void) updateLabels {
+    self.playerLabel.text = [NSString stringWithFormat:@"%@", self.playerHand.handValueAsString];
+    self.dealerLabel.text = [NSString stringWithFormat:@"%@", self.dealerHand.handValueAsString];
 }
 
 

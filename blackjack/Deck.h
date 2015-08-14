@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Card.h"
 
 @interface Deck : NSObject
 
@@ -14,5 +15,7 @@
 @property (nonatomic) int next_card;
 
 + (instancetype) createDeck;
+
+- (Card *) nextCard;
 
 @end

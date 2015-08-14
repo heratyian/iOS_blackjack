@@ -17,6 +17,7 @@
 		CD659B671B7AB18000F1C1DD /* blackjackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B661B7AB18000F1C1DD /* blackjackUITests.m */; };
 		CD659B791B7AE78600F1C1DD /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B781B7AE78600F1C1DD /* Deck.m */; };
 		CD659B7C1B7AE7A600F1C1DD /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659B7B1B7AE7A600F1C1DD /* Card.m */; };
+		CDE025631B7D7C770044D8B6 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE025621B7D7C770044D8B6 /* Hand.m */; };
 		CDE181911B7D185300707412 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE181901B7D185300707412 /* Util.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		CD659B781B7AE78600F1C1DD /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		CD659B7A1B7AE7A600F1C1DD /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		CD659B7B1B7AE7A600F1C1DD /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		CDE025611B7D7C770044D8B6 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
+		CDE025621B7D7C770044D8B6 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
 		CDE1818F1B7D185300707412 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		CDE181901B7D185300707412 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +117,8 @@
 				CD659B451B7AB18000F1C1DD /* AppDelegate.m */,
 				CD659B471B7AB18000F1C1DD /* ViewController.h */,
 				CD659B481B7AB18000F1C1DD /* ViewController.m */,
+				CDE025611B7D7C770044D8B6 /* Hand.h */,
+				CDE025621B7D7C770044D8B6 /* Hand.m */,
 				CD659B4A1B7AB18000F1C1DD /* Main.storyboard */,
 				CD659B7A1B7AE7A600F1C1DD /* Card.h */,
 				CD659B7B1B7AE7A600F1C1DD /* Card.m */,
@@ -286,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD659B7C1B7AE7A600F1C1DD /* Card.m in Sources */,
+				CDE025631B7D7C770044D8B6 /* Hand.m in Sources */,
 				CD659B791B7AE78600F1C1DD /* Deck.m in Sources */,
 				CD659B491B7AB18000F1C1DD /* ViewController.m in Sources */,
 				CD659B461B7AB18000F1C1DD /* AppDelegate.m in Sources */,
