@@ -16,6 +16,7 @@
 + (instancetype) createHand;
 
 - (void) addCard:(Card *) card;
+- (NSString *) handAsString;
 - (NSString *) handValueAsString;
 - (int) handValueAsInt;
 

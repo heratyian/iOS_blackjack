@@ -42,13 +42,26 @@
 - (void)hitMePressed:(UIButton *)button {
     [self.playerHand addCard:self.deck.nextCard];
     [self updateLabels];
+    
+    // check for bust
+    if ([self.playerHand handValueAsInt] > 21) {
+        [self sendAlertWithMessage:@"You Bust!"];
+    }
 }
 
 - (void)stayPressed:(UIButton *)button {
+
     while ([self.dealerHand handValueAsInt] < 17) {
         [self.dealerHand addCard:self.deck.nextCard];
         [self updateLabels];
     }
+    
+    // check for bust
+    if ([self.dealerHand handValueAsInt] > 21) {
+        [self sendAlertWithMessage:@"Dealer Bust!"];
+    }
+    
+    [self checkOutcome];
 }
 
 - (void)restartPressed:(UIButton *)button {
@@ -59,14 +72,45 @@
     self.deck = [Deck createDeck];
     self.dealerHand = [Hand createHand];
     self.playerHand = [Hand createHand];
+    
+    [self dealHand:self.playerHand];
+    [self dealHand:self.dealerHand];
 
     [self updateLabels];
 }
 
-- (void) updateLabels {
-    self.playerLabel.text = [NSString stringWithFormat:@"%@", self.playerHand.handValueAsString];
-    self.dealerLabel.text = [NSString stringWithFormat:@"%@", self.dealerHand.handValueAsString];
+- (void) dealHand:(Hand *) hand {
+    [hand addCard:self.deck.nextCard];
+    [hand addCard:self.deck.nextCard];
 }
+
+- (void) updateLabels {
+    self.playerLabel.text = [NSString stringWithFormat:@"%@", self.playerHand.handAsString];
+    self.dealerLabel.text = [NSString stringWithFormat:@"%@", self.dealerHand.handAsString];
+}
+
+- (void) checkOutcome {
+    
+    if ([self.playerHand handValueAsInt] < [self.dealerHand handValueAsInt]) {
+        // you lose!
+        [self sendAlertWithMessage:@"You Lose!"];
+        
+    } else if ([self.playerHand handValueAsInt] > [self.dealerHand handValueAsInt]) {
+        // you win!
+        [self sendAlertWithMessage:@"You Win!"];
+    } else {
+        // tie
+        [self sendAlertWithMessage:@"Tie"];
+    }
+}
+
+- (void) sendAlertWithMessage:(NSString *) message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Game Over" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaulAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * __nonnull action) {}];
+    [alert addAction:defaulAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 
 @end
